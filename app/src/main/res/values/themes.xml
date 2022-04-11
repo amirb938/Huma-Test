@@ -1,0 +1,27 @@
+<resources>
+
+    <style name="Theme.TestTV" parent="@style/Theme.Leanback" />
+
+    <style name="MyCustomRowHeaderStyle" parent="Widget.Leanback.Row.Header">
+        <item name="android:textColor">@android:color/holo_red_dark</item>
+        <item name="android:textColorLinkInverse">@android:color/holo_green_dark</item>
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="fontFamily">@font/iranyekan_extrabold_fanum</item>
+    </style>
+
+    <style name="MyCustomRowHeaderDock" parent="Widget.Leanback.Row.HeaderDock">
+        <item name="fontFamily">@font/iranyekan_extrablack_fanum</item>
+    </style>
+
+    <style name="My.TitleView" parent="Widget.Leanback.TitleView">
+        <item name="browseTitleViewLayout">@layout/lb_browse_title</item>
+    </style>
+
+
+    <style name="MyCustomBrowseStyle" parent="Theme.Leanback">
+        <item name="rowHeaderStyle">@style/MyCustomRowHeaderStyle</item>
+        <item name="rowHeaderDockStyle">@style/MyCustomRowHeaderDock</item>
+        <item name="browseTitleViewStyle">@style/My.TitleView</item>
+
+    </style>
+</resources>

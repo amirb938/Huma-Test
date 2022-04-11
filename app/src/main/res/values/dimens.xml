@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xxbig_margin">30dp</dimen>
+    <dimen name="xbig_margin">25dp</dimen>
+    <dimen name="big_margin">20dp</dimen>
+    <dimen name="standard_margin">15dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+
+    <dimen name="big_text_size">22sp</dimen>
+    <dimen name="standard_text_size">18sp</dimen>
+    <dimen name="small_text_size">16sp</dimen>
+</resources>
