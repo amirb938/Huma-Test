@@ -3,6 +3,14 @@
 A simple Android project for TV
 
 
+## Project features
+
+- Custom HeaderItem
+- Custom "Browse Title View"
+- Set persian font for all text in project
+- The  menu is fully hidden when the menu is collapsed
+- "Browse Title View" hide/unhide when scroll ListRow
+
 
 ## Clone
 
@@ -13,9 +21,9 @@ https://github.com/amirb938/Huma-Test
 ```
 
 ## Download Apk
-You can download Apk file
+Version 1.0
 
-[Download Apk](https://raw.githubusercontent.com/amirb938/Huma-Test/main/app/release/app-release.apk).
+[Direct download link](https://raw.githubusercontent.com/amirb938/Huma-Test/main/app/release/app-release.apk).
 
 ## Images
 
@@ -31,13 +39,6 @@ You can download Apk file
 
 
 
-## Project features
-
-- Custom HeaderItem
-- Custom "Browse Title View"
-- Set persian font for all text in project
-- The  menu is fully hidden when the menu is collapsed
-- "Browse Title View" hide/unhide when scroll ListRow
 
 ## Developed By
 [Amir Mohammad Bakhsh Zadeh](https://github.com/amirb938)
