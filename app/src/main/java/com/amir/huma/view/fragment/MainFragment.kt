@@ -13,6 +13,9 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.leanback.app.BackgroundManager
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
+import com.amir.huma.model.BookData
+import com.amir.huma.model.local.Book
+import com.amir.huma.presenter.BookViewPresenter
 import java.util.*
 
 class MainFragment : BrowseSupportFragment() {
@@ -55,6 +58,8 @@ class MainFragment : BrowseSupportFragment() {
 
     private fun lisener() {
         onItemViewSelectedListener = ItemViewSelectedListener()
+        onItemViewClickedListener = ItemViewClickedListener()
+
     }
 
 
@@ -125,5 +130,17 @@ class MainFragment : BrowseSupportFragment() {
             }
         }
     }
+
+    private inner class ItemViewClickedListener : OnItemViewClickedListener {
+        override fun onItemClicked(
+            itemViewHolder: Presenter.ViewHolder,
+            item: Any,
+            rowViewHolder: RowPresenter.ViewHolder,
+            row: Row
+        ) {
+
+        }
+    }
+
 
 }

@@ -14,7 +14,7 @@
     </style>
 
     <style name="My.TitleView" parent="Widget.Leanback.TitleView">
-        <item name="browseTitleViewLayout">@layout/layout_browse_title</item>
+        <item name="browseTitleViewLayout">@layout/lb_browse_title</item>
     </style>
 
 
