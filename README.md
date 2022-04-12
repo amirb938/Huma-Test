@@ -15,9 +15,11 @@ https://github.com/amirb938/Huma-Test
 
 ## Images
 
-![This is an image](https://drive.google.com/file/d/1D_qclgOXXq46TiZaLjoZ1XQ1wgM8fEu9/view?usp=sharing)
+![This is an image](https://s23.picofile.com/file/8449084176/Screenshot01.jpg)
 
-![This is an image](https://drive.google.com/file/d/13xnCCEwL_zNUewnIMIgwMdfYbxCBg_er/view?usp=sharing)
+![This is an image](https://s23.picofile.com/file/8449084168/Screenshot02.jpg)
+
+
 
 
 
