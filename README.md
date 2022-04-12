@@ -12,6 +12,11 @@ You can use the following link to receive the source directly
 https://github.com/amirb938/Huma-Test
 ```
 
+## Download Apk
+You can download Apk file
+
+[Download Apk](https://github.com/amirb938/Huma-Test/blob/main/app/release/app-release.apk).
+[Download Apk2](https://raw.githubusercontent.com/amirb938/Huma-Test/main/app/release/app-release.apk).
 
 ## Images
 
