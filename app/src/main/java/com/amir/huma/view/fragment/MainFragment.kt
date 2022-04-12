@@ -15,7 +15,9 @@ import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
 import com.amir.huma.model.BookData
 import com.amir.huma.model.local.Book
+import com.amir.huma.model.local.HeaderItemModel
 import com.amir.huma.presenter.BookViewPresenter
+import com.amir.huma.presenter.HeaderPresenter
 import java.util.*
 
 class MainFragment : BrowseSupportFragment() {
@@ -74,13 +76,17 @@ class MainFragment : BrowseSupportFragment() {
     private fun setupUIElements() {
 
         title = getString(R.string.browse_title)
-        // over title
         headersState = BrowseSupportFragment.HEADERS_ENABLED
         isHeadersTransitionOnBackEnabled = true
 
-        // set fastLane (or headers) background color
         brandColor = ContextCompat.getColor(requireActivity(), R.color.fastlane_background)
 
+        setHeaderPresenterSelector(object : PresenterSelector() {
+            override fun getPresenter(item: Any?): Presenter {
+                return HeaderPresenter()
+            }
+
+        })
     }
 
     private fun loadRows() {
@@ -96,7 +102,7 @@ class MainFragment : BrowseSupportFragment() {
             for (j in 0 until list.size) {
                 listRowAdapter.add(list[j])
             }
-            val header = HeaderItem(i.toLong(), BookData.BOOK_CATEGORY[i])
+            val header = HeaderItemModel(i.toLong(), BookData.BOOK_CATEGORY[i])
 
             rowsAdapter.add(ListRow(header, listRowAdapter))
         }
