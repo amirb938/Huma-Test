@@ -15,8 +15,7 @@ https://github.com/amirb938/Huma-Test
 ## Download Apk
 You can download Apk file
 
-[Download Apk](https://github.com/amirb938/Huma-Test/blob/main/app/release/app-release.apk).
-[Download Apk2](https://raw.githubusercontent.com/amirb938/Huma-Test/main/app/release/app-release.apk).
+[Download Apk](https://raw.githubusercontent.com/amirb938/Huma-Test/main/app/release/app-release.apk).
 
 ## Images
 
