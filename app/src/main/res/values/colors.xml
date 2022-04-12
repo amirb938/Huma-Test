@@ -1,5 +1,11 @@
 <resources>
-    <color name="background_gradient_start">#000000</color>
-    <color name="background_gradient_end">#DDDDDD</color>
-    <color name="fastlane_background">#0096a6</color>
+
+    <color name="colorPrimary">#2d1d48</color>
+    <color name="colorPrimaryVariant">#4D2D1D48</color>
+    <color name="colorOnPrimary">#f2f2f2</color>
+
+    <color name="colorSecondary">#EEAD00</color>
+    <color name="colorSecondaryVariant">#4DEEAD00</color>
+    <color name="colorOnSecondary">#f2f2f2</color>
+
 </resources>

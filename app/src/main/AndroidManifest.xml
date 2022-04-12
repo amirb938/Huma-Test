@@ -9,11 +9,12 @@
         android:required="false" />
     <uses-feature
         android:name="android.software.leanback"
-        android:required="true" />
+        android:required="false" />
+
 
     <application
         android:allowBackup="true"
-        android:banner="@drawable/ic_logo1"
+        android:banner="@drawable/ic_logo_book1"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"

@@ -2,15 +2,12 @@ package com.amir.huma
 
 import android.content.Context
 import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.leanback.app.BackgroundManager
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
 import com.amir.huma.model.BookData
@@ -20,16 +17,15 @@ import com.amir.huma.presenter.BookViewPresenter
 import com.amir.huma.presenter.HeaderPresenter
 import java.util.*
 
+
 class MainFragment : BrowseSupportFragment() {
     private val TAG = "MainFragment"
-    private lateinit var mBackgroundManager: BackgroundManager
-    private var mDefaultBackground: Drawable? = null
-    private lateinit var mMetrics: DisplayMetrics
     var typeFace: Typeface? = null
     lateinit var ll_browse_title: View
+    var before_id = 0L
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        prepareBackgroundManager()
         setupUIElements()
         loadRows()
         initView()
@@ -43,13 +39,13 @@ class MainFragment : BrowseSupportFragment() {
         img_logo1.setImageDrawable(
             ContextCompat.getDrawable(
                 requireActivity(),
-                R.drawable.ic_logo1
+                R.drawable.ic_logo_book1
             )
         )
         img_logo2.setImageDrawable(
             ContextCompat.getDrawable(
                 requireActivity(),
-                R.drawable.ic_logo2
+                R.drawable.ic_logo_book2
             )
         )
 
@@ -59,35 +55,41 @@ class MainFragment : BrowseSupportFragment() {
     }
 
     private fun lisener() {
-        onItemViewSelectedListener = ItemViewSelectedListener()
-        onItemViewClickedListener = ItemViewClickedListener()
+        onItemViewSelectedListener =
+            OnItemViewSelectedListener { itemViewHolder, item, rowViewHolder, row ->
+                if (item is Book) {
+                    if (before_id > row.id || row.id == 0L) {
+                        ll_browse_title.visibility = View.VISIBLE
+                    } else {
+                        ll_browse_title.visibility = View.GONE
+                    }
+                    before_id = row.id
+                    Log.d(TAG, "onItemSelected: ${row.id}")
+                }
+            }
+
+        onItemViewClickedListener =
+            OnItemViewClickedListener { itemViewHolder, item, rowViewHolder, row ->
+                Log.d(TAG, "onItemClicked: ${row.id}")
+            }
 
     }
 
-
-    private fun prepareBackgroundManager() {
-        mBackgroundManager = BackgroundManager.getInstance(activity)
-        mBackgroundManager.attach(activity?.window)
-        mDefaultBackground = ContextCompat.getDrawable(requireActivity(), R.drawable.view_back)
-        mMetrics = DisplayMetrics()
-        requireActivity().windowManager.defaultDisplay.getMetrics(mMetrics)
-    }
 
     private fun setupUIElements() {
-
         title = getString(R.string.browse_title)
         headersState = BrowseSupportFragment.HEADERS_ENABLED
         isHeadersTransitionOnBackEnabled = true
-
-        brandColor = ContextCompat.getColor(requireActivity(), R.color.fastlane_background)
+        brandColor = ContextCompat.getColor(requireActivity(), R.color.colorSecondary)
 
         setHeaderPresenterSelector(object : PresenterSelector() {
             override fun getPresenter(item: Any?): Presenter {
                 return HeaderPresenter()
             }
-
         })
+
     }
+
 
     private fun loadRows() {
         val list = BookData.LIST
@@ -104,10 +106,10 @@ class MainFragment : BrowseSupportFragment() {
             }
             val header = HeaderItemModel(i.toLong(), BookData.BOOK_CATEGORY[i])
 
-            rowsAdapter.add(ListRow(header, listRowAdapter))
+            var listRow = ListRow(header, listRowAdapter)
+            rowsAdapter.add(listRow)
         }
         adapter = rowsAdapter
-
     }
 
     fun getTypeFace(context: Context): Typeface {
@@ -116,37 +118,5 @@ class MainFragment : BrowseSupportFragment() {
         }
         return typeFace!!
     }
-
-
-    var before_id = 0L
-
-    private inner class ItemViewSelectedListener : OnItemViewSelectedListener {
-        override fun onItemSelected(
-            itemViewHolder: Presenter.ViewHolder?, item: Any?,
-            rowViewHolder: RowPresenter.ViewHolder, row: Row
-        ) {
-            if (item is Book) {
-                if (before_id > row.id || row.id == 0L) {
-                    ll_browse_title.visibility = View.VISIBLE
-                } else {
-                    ll_browse_title.visibility = View.GONE
-                }
-                before_id = row.id
-                Log.d(TAG, "onItemSelected: ${row.id}")
-            }
-        }
-    }
-
-    private inner class ItemViewClickedListener : OnItemViewClickedListener {
-        override fun onItemClicked(
-            itemViewHolder: Presenter.ViewHolder,
-            item: Any,
-            rowViewHolder: RowPresenter.ViewHolder,
-            row: Row
-        ) {
-
-        }
-    }
-
 
 }

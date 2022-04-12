@@ -1,15 +1,14 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Theme.TestTV" parent="@style/Theme.Leanback" />
 
-    <style name="MyCustomRowHeaderStyle" parent="Widget.Leanback.Row.Header">
-        <item name="android:textColor">@android:color/holo_red_dark</item>
-        <item name="android:textColorLinkInverse">@android:color/holo_green_dark</item>
+    <style name="My.Row.Header" parent="Widget.Leanback.Row.Header">
+        <item name="android:textColor">@color/colorSecondary</item>
         <item name="android:textSize">@dimen/big_text_size</item>
         <item name="fontFamily">@font/iranyekan_extrabold_fanum</item>
     </style>
 
-    <style name="MyCustomRowHeaderDock" parent="Widget.Leanback.Row.HeaderDock">
+    <style name="My.Row.HeaderDock" parent="Widget.Leanback.Row.HeaderDock">
         <item name="fontFamily">@font/iranyekan_extrablack_fanum</item>
     </style>
 
@@ -17,11 +16,24 @@
         <item name="browseTitleViewLayout">@layout/lb_browse_title</item>
     </style>
 
+    <style name="My.h" parent="Widget.Leanback.Header">
+        <item name="switchMinWidth">0dp</item>
+        <item name="android:defaultWidth" tools:targetApi="n">0dp</item>
+        <item name="android:requiresSmallestWidthDp">0</item>
+        <item name="android:maxWidth">0dp</item>
+        <item name="android:maxResizeWidth" tools:targetApi="s">0dp</item>
+        <item name="android:width" tools:targetApi="s">0dp</item>
+        <item name="android:viewportWidth" tools:targetApi="s">0</item>
+        <item name="android:compatibleWidthLimitDp" tools:targetApi="s">0</item>
+        <item name="android:targetCellWidth" tools:targetApi="s">0</item>
+    </style>
+
 
     <style name="MyCustomBrowseStyle" parent="Theme.Leanback">
-        <item name="rowHeaderStyle">@style/MyCustomRowHeaderStyle</item>
-        <item name="rowHeaderDockStyle">@style/MyCustomRowHeaderDock</item>
+        <item name="rowHeaderStyle">@style/My.Row.Header</item>
+        <item name="rowHeaderDockStyle">@style/My.Row.HeaderDock</item>
         <item name="browseTitleViewStyle">@style/My.TitleView</item>
+        <item name="headerStyle">@style/My.h</item>
 
     </style>
 </resources>
