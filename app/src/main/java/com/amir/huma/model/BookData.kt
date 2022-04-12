@@ -1,4 +1,6 @@
-package com.amir.huma
+package com.amir.huma.model
+
+import com.amir.huma.model.local.Book
 
 object BookData {
     val BOOK_CATEGORY = arrayOf(

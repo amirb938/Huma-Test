@@ -1,7 +1,9 @@
-package com.amir.huma
+package com.amir.huma.view.activity
 
 import android.os.Bundle
 import androidx.fragment.app.FragmentActivity
+import com.amir.huma.view.fragment.MainFragment
+import com.amir.huma.R
 
 class MainActivity : FragmentActivity() {
 

@@ -1,4 +1,4 @@
-package com.amir.huma
+package com.amir.huma.presenter
 
 import android.content.Context
 import android.graphics.Typeface
@@ -9,6 +9,8 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.leanback.widget.BaseCardView
 import androidx.leanback.widget.ImageCardView
 import androidx.leanback.widget.Presenter
+import com.amir.huma.R
+import com.amir.huma.model.local.Book
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions

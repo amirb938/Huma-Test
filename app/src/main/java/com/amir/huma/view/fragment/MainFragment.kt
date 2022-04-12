@@ -1,4 +1,4 @@
-package com.amir.huma
+package com.amir.huma.view.fragment
 
 import android.content.Context
 import android.graphics.Typeface
@@ -10,6 +10,10 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
+import com.amir.huma.model.local.Book
+import com.amir.huma.model.BookData
+import com.amir.huma.presenter.BookViewPresenter
+import com.amir.huma.R
 import java.util.*
 
 class MainFragment : BrowseSupportFragment() {
@@ -23,7 +27,28 @@ class MainFragment : BrowseSupportFragment() {
         setupUIElements()
         initView()
         loadRows()
+        loadRowsWithRecyclerView()
         initlisener()
+    }
+
+    private fun loadRowsWithRecyclerView() {
+        val list = BookData.LIST
+
+        val rowsAdapter = ArrayObjectAdapter(ListRowPresenter())
+        val bookViewPresenter = BookViewPresenter()
+        for (i in 0 until BookData.BOOK_CATEGORY.size) {
+            if (i != 0) {
+                Collections.shuffle(list)
+            }
+            val listRowAdapter = ArrayObjectAdapter(bookViewPresenter)
+            for (j in 0 until list.size) {
+                listRowAdapter.add(list[j])
+            }
+            val header = HeaderItem(i.toLong(), BookData.BOOK_CATEGORY[i])
+
+            rowsAdapter.add(ListRow(header, listRowAdapter))
+        }
+        adapter = rowsAdapter
     }
 
     private fun initView() {

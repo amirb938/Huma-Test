@@ -1,4 +1,4 @@
-package com.amir.huma
+package com.amir.huma.model.local
 
 import java.io.Serializable
 

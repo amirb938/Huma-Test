@@ -18,7 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestTV">
         <activity
-            android:name="com.amir.huma.MainActivity"
+            android:name="com.amir.huma.view.activity.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
