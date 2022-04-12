@@ -2,33 +2,28 @@ package com.amir.huma
 
 import android.content.Context
 import android.graphics.Typeface
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.leanback.app.BackgroundManager
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
 import java.util.*
 
 class MainFragment : BrowseSupportFragment() {
+
     private val TAG = "MainFragment"
-    private lateinit var mBackgroundManager: BackgroundManager
-    private var mDefaultBackground: Drawable? = null
-    private lateinit var mMetrics: DisplayMetrics
     var typeFace: Typeface? = null
     lateinit var ll_browse_title: View
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        prepareBackgroundManager()
         setupUIElements()
-        loadRows()
         initView()
-        lisener()
+        loadRows()
+        initlisener()
     }
 
     private fun initView() {
@@ -47,33 +42,20 @@ class MainFragment : BrowseSupportFragment() {
                 R.drawable.ic_logo2
             )
         )
-
 //        ll_browse_title.visibility = View.GONE
 //        (ll_browse_title.findViewById(R.id.txt_title) as TextView).typeface = getTypeFace(requireActivity())
-
     }
 
-    private fun lisener() {
+    private fun initlisener() {
         onItemViewSelectedListener = ItemViewSelectedListener()
+        onItemViewClickedListener = ItemViewClickedListener()
     }
 
-
-    private fun prepareBackgroundManager() {
-        mBackgroundManager = BackgroundManager.getInstance(activity)
-        mBackgroundManager.attach(activity?.window)
-        mDefaultBackground = ContextCompat.getDrawable(requireActivity(), R.drawable.view_back)
-        mMetrics = DisplayMetrics()
-        requireActivity().windowManager.defaultDisplay.getMetrics(mMetrics)
-    }
 
     private fun setupUIElements() {
-
-        title = getString(R.string.browse_title)
-        // over title
         headersState = BrowseSupportFragment.HEADERS_ENABLED
         isHeadersTransitionOnBackEnabled = true
 
-        // set fastLane (or headers) background color
         brandColor = ContextCompat.getColor(requireActivity(), R.color.fastlane_background)
 
     }
@@ -123,6 +105,17 @@ class MainFragment : BrowseSupportFragment() {
                 before_id = row.id
                 Log.d(TAG, "onItemSelected: ${row.id}")
             }
+        }
+    }
+
+    private inner class ItemViewClickedListener : OnItemViewClickedListener {
+        override fun onItemClicked(
+            itemViewHolder: Presenter.ViewHolder,
+            item: Any,
+            rowViewHolder: RowPresenter.ViewHolder,
+            row: Row
+        ) {
+
         }
     }
 
