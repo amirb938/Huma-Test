@@ -27,7 +27,11 @@ https://github.com/amirb938/Huma-Test
 
 ## Project features
 
-soon ...
+- Custom HeaderItem
+- Custom "Browse Title View"
+- Set persian font for all text in project
+- The  menu is fully hidden when the menu is collapsed
+- "Browse Title View" hide/unhide when scroll ListRow
 
 ## Developed By
 [Amir Mohammad Bakhsh Zadeh](https://github.com/amirb938)
