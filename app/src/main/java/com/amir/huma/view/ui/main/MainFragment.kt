@@ -1,4 +1,4 @@
-package com.amir.huma
+package com.amir.huma.view.ui.main
 
 import android.content.Context
 import android.graphics.Typeface
@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.leanback.app.BrowseSupportFragment
 import androidx.leanback.widget.*
+import com.amir.huma.R
 import com.amir.huma.model.BookData
 import com.amir.huma.model.local.Book
 import com.amir.huma.model.local.HeaderItemModel
