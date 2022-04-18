@@ -1,4 +1,4 @@
-package com.amir.huma.presenter
+package com.amir.huma.presenter.main
 
 import android.content.Context
 import android.graphics.Typeface

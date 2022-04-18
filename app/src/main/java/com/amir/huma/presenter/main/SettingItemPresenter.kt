@@ -1,11 +1,10 @@
-package com.amir.huma.presenter
+package com.amir.huma.presenter.main
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.leanback.widget.ImageCardView
 import androidx.leanback.widget.Presenter
 import com.amir.huma.R
 import com.amir.huma.model.local.SettingItem

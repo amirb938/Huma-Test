@@ -1,6 +1,7 @@
 package com.amir.huma.view.ui.main
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.util.Log
@@ -15,10 +16,12 @@ import com.amir.huma.model.BookData
 import com.amir.huma.model.local.Book
 import com.amir.huma.model.local.HeaderItemModel
 import com.amir.huma.model.local.SettingItem
-import com.amir.huma.presenter.BookViewPresenter
-import com.amir.huma.presenter.HeaderPresenter
-import com.amir.huma.presenter.SettingItemPresenter
+import com.amir.huma.presenter.main.BookViewPresenter
+import com.amir.huma.presenter.main.HeaderPresenter
+import com.amir.huma.presenter.main.SettingItemPresenter
 import com.amir.huma.utils.MyBackgroundManager
+import com.amir.huma.view.ui.detailBook.BookDetailActivity
+import com.amir.huma.view.ui.detailBook.BookDetailFragment.Companion.EXTRA_BOOK
 import java.util.*
 
 
@@ -84,7 +87,13 @@ class MainFragment : BrowseSupportFragment() {
 
         onItemViewClickedListener =
             OnItemViewClickedListener { itemViewHolder, item, rowViewHolder, row ->
-                Log.d(TAG, "onItemClicked: ${row.id}")
+
+                if (item is Book) {
+                    var intent = Intent(activity, BookDetailActivity::class.java).apply {
+                        putExtra(EXTRA_BOOK, item)
+                    }
+                    startActivity(intent)
+                }
             }
 
     }

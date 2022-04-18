@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Huma</string>
     <string name="browse_title">برترین کتاب های هفته</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
