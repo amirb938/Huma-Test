@@ -18,6 +18,7 @@ import com.amir.huma.model.local.SettingItem
 import com.amir.huma.presenter.BookViewPresenter
 import com.amir.huma.presenter.HeaderPresenter
 import com.amir.huma.presenter.SettingItemPresenter
+import com.amir.huma.utils.MyBackgroundManager
 import java.util.*
 
 
@@ -26,6 +27,12 @@ class MainFragment : BrowseSupportFragment() {
     var typeFace: Typeface? = null
     lateinit var ll_browse_title: View
     var before_id = 0L
+
+    private val myBackgroundManager: MyBackgroundManager by lazy {
+        MyBackgroundManager(requireActivity()).apply {
+            clearBackground()
+        }
+    }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
@@ -68,6 +75,10 @@ class MainFragment : BrowseSupportFragment() {
                     }
                     before_id = row.id
                     Log.d(TAG, "onItemSelected: ${row.id}")
+
+                    myBackgroundManager.updateBackground(item.imageUrl!!)
+                } else {
+                    myBackgroundManager.clearBackground()
                 }
             }
 

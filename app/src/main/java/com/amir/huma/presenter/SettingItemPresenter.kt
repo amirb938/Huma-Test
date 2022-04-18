@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.leanback.widget.ImageCardView
 import androidx.leanback.widget.Presenter
 import com.amir.huma.R
 import com.amir.huma.model.local.SettingItem
@@ -27,6 +28,5 @@ class SettingItemPresenter : Presenter() {
     }
 
     override fun onUnbindViewHolder(viewHolder: ViewHolder?) {
-        TODO("Not yet implemented")
     }
 }
