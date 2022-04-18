@@ -14,8 +14,10 @@ import com.amir.huma.R
 import com.amir.huma.model.BookData
 import com.amir.huma.model.local.Book
 import com.amir.huma.model.local.HeaderItemModel
+import com.amir.huma.model.local.SettingItem
 import com.amir.huma.presenter.BookViewPresenter
 import com.amir.huma.presenter.HeaderPresenter
+import com.amir.huma.presenter.SettingItemPresenter
 import java.util.*
 
 
@@ -101,15 +103,22 @@ class MainFragment : BrowseSupportFragment() {
             if (i != 0) {
                 Collections.shuffle(list)
             }
+
             val listRowAdapter = ArrayObjectAdapter(bookViewPresenter)
             for (j in 0 until list.size) {
                 listRowAdapter.add(list[j])
             }
-            val header = HeaderItemModel(i.toLong(), BookData.BOOK_CATEGORY[i])
+            var header = HeaderItemModel(i.toLong(), BookData.BOOK_CATEGORY[i])
 
-            var listRow = ListRow(header, listRowAdapter)
-            rowsAdapter.add(listRow)
+            rowsAdapter.add(ListRow(header, listRowAdapter))
+
         }
+        var setting_header = HeaderItemModel((BookData.BOOK_CATEGORY.size + 1).toLong(), "تنظیمات")
+        val itemListRowSettingAdapter = ArrayObjectAdapter(SettingItemPresenter()).apply {
+            add(SettingItem("تنظیمات", R.drawable.ic_baseline_settings_24))
+            add(SettingItem("پروفایل", R.drawable.ic_baseline_person_24))
+        }
+        rowsAdapter.add(ListRow(setting_header, itemListRowSettingAdapter))
         adapter = rowsAdapter
     }
 
