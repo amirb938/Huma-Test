@@ -78,7 +78,7 @@ class BookDetailFragment : DetailsSupportFragment() {
                     R.drawable.ic_baseline_shopping_cart_24
                 )
             })
-            add(Action(3, ",ویرایش").apply {
+            add(Action(3, "ویرایش").apply {
                 icon = ContextCompat.getDrawable(
                     requireContext(),
                     R.drawable.ic_baseline_edit_24

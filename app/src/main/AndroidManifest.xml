@@ -17,7 +17,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TestTV">
+        android:theme="@style/Theme.Huma">
+        <activity
+            android:name=".view.ui.error.ErrorActivity"
+            android:exported="false" />
         <activity
             android:name=".view.ui.detailBook.BookDetailActivity"
             android:exported="false" />
@@ -30,7 +33,7 @@
             android:exported="true"
             android:label="@string/app_name"
             android:screenOrientation="landscape"
-            android:theme="@style/MyCustomBrowseStyle">
+            android:theme="@style/MyCustomBrowseStyleMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

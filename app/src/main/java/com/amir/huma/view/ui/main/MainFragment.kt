@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.leanback.app.BrowseSupportFragment
@@ -22,6 +23,7 @@ import com.amir.huma.presenter.main.SettingItemPresenter
 import com.amir.huma.utils.MyBackgroundManager
 import com.amir.huma.view.ui.detailBook.BookDetailActivity
 import com.amir.huma.view.ui.detailBook.BookDetailFragment.Companion.EXTRA_BOOK
+import com.amir.huma.view.ui.error.ErrorActivity
 import java.util.*
 
 
@@ -49,6 +51,7 @@ class MainFragment : BrowseSupportFragment() {
         ll_browse_title = requireView().findViewById(R.id.ll_browse_title)
         var img_logo1: ImageView = ll_browse_title.findViewById(R.id.img_logo1)
         var img_logo2: ImageView = ll_browse_title.findViewById(R.id.img_logo2)
+        var txt_title: TextView = ll_browse_title.findViewById(R.id.txt_title)
         img_logo1.setImageDrawable(
             ContextCompat.getDrawable(
                 requireActivity(),
@@ -61,7 +64,7 @@ class MainFragment : BrowseSupportFragment() {
                 R.drawable.ic_logo_book2
             )
         )
-
+        txt_title.text = getString(R.string.title_browse)
 //        ll_browse_title.visibility = View.GONE
 //        (ll_browse_title.findViewById(R.id.txt_title) as TextView).typeface = getTypeFace(requireActivity())
 
@@ -93,6 +96,8 @@ class MainFragment : BrowseSupportFragment() {
                         putExtra(EXTRA_BOOK, item)
                     }
                     startActivity(intent)
+                } else {
+                    startActivity(Intent(activity, ErrorActivity::class.java))
                 }
             }
 
@@ -100,7 +105,6 @@ class MainFragment : BrowseSupportFragment() {
 
 
     private fun setupUIElements() {
-        title = getString(R.string.browse_title)
         headersState = BrowseSupportFragment.HEADERS_ENABLED
         isHeadersTransitionOnBackEnabled = true
         brandColor = ContextCompat.getColor(requireActivity(), R.color.colorSecondary)

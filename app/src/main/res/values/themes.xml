@@ -1,6 +1,6 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
-    <style name="Theme.TestTV" parent="@style/Theme.Leanback" />
+    <style name="Theme.Huma" parent="@style/Theme.Leanback" />
 
     <style name="My.Row.Header" parent="Widget.Leanback.Row.Header">
         <item name="android:textColor">@color/colorSecondary</item>
@@ -16,24 +16,12 @@
         <item name="browseTitleViewLayout">@layout/lb_browse_title</item>
     </style>
 
-    <style name="My.h" parent="Widget.Leanback.Header">
-        <item name="switchMinWidth">0dp</item>
-        <item name="android:defaultWidth" tools:targetApi="n">0dp</item>
-        <item name="android:requiresSmallestWidthDp">0</item>
-        <item name="android:maxWidth">0dp</item>
-        <item name="android:maxResizeWidth" tools:targetApi="s">0dp</item>
-        <item name="android:width" tools:targetApi="s">0dp</item>
-        <item name="android:viewportWidth" tools:targetApi="s">0</item>
-        <item name="android:compatibleWidthLimitDp" tools:targetApi="s">0</item>
-        <item name="android:targetCellWidth" tools:targetApi="s">0</item>
-    </style>
 
-
-    <style name="MyCustomBrowseStyle" parent="Theme.Leanback">
+    <style name="MyCustomBrowseStyleMain" parent="Theme.Leanback">
         <item name="rowHeaderStyle">@style/My.Row.Header</item>
         <item name="rowHeaderDockStyle">@style/My.Row.HeaderDock</item>
         <item name="browseTitleViewStyle">@style/My.TitleView</item>
-        <item name="headerStyle">@style/My.h</item>
-
     </style>
+
+
 </resources>

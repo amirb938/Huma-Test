@@ -18,7 +18,6 @@
         android:layout_height="match_parent"
         android:fontFamily="@font/iranyekan_extrabold_fanum"
         android:gravity="center_vertical"
-        android:text="@string/browse_title"
         android:textSize="@dimen/standard_text_size" />
 
     <View
