@@ -5,7 +5,7 @@
     <style name="My.Row.Header" parent="Widget.Leanback.Row.Header">
         <item name="android:textColor">@color/colorSecondary</item>
         <item name="android:textSize">@dimen/big_text_size</item>
-        <item name="fontFamily">@font/iranyekan_extrabold_fanum</item>
+        <item name="android:fontFamily">@font/iranyekan_extrabold_fanum</item>
     </style>
 
     <style name="My.Row.HeaderDock" parent="Widget.Leanback.Row.HeaderDock">
