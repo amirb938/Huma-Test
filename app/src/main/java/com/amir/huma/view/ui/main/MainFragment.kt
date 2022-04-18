@@ -21,6 +21,7 @@ import com.amir.huma.presenter.main.BookViewPresenter
 import com.amir.huma.presenter.main.HeaderPresenter
 import com.amir.huma.presenter.main.SettingItemPresenter
 import com.amir.huma.utils.MyBackgroundManager
+import com.amir.huma.model.SettingIds
 import com.amir.huma.view.ui.detailBook.BookDetailActivity
 import com.amir.huma.view.ui.detailBook.BookDetailFragment.Companion.EXTRA_BOOK
 import com.amir.huma.view.ui.error.ErrorActivity
@@ -96,11 +97,21 @@ class MainFragment : BrowseSupportFragment() {
                         putExtra(EXTRA_BOOK, item)
                     }
                     startActivity(intent)
+                } else if (item is SettingItem) {
+                    if (item.id == SettingIds.EXIT_ID) {
+
+                    } else {
+                        showError()
+                    }
                 } else {
-                    startActivity(Intent(activity, ErrorActivity::class.java))
+                    showError()
                 }
             }
 
+    }
+
+    private fun showError() {
+        startActivity(Intent(activity, ErrorActivity::class.java))
     }
 
 
@@ -139,8 +150,9 @@ class MainFragment : BrowseSupportFragment() {
         }
         var setting_header = HeaderItemModel((BookData.BOOK_CATEGORY.size + 1).toLong(), "تنظیمات")
         val itemListRowSettingAdapter = ArrayObjectAdapter(SettingItemPresenter()).apply {
-            add(SettingItem("تنظیمات", R.drawable.ic_baseline_settings_24))
-            add(SettingItem("پروفایل", R.drawable.ic_baseline_person_24))
+            add(SettingItem(SettingIds.SETTING_ID, "تنظیمات", R.drawable.ic_baseline_settings_24))
+            add(SettingItem(SettingIds.PROFILE_ID, "پروفایل", R.drawable.ic_baseline_person_24))
+            add(SettingItem(SettingIds.EXIT_ID, "خروج", R.drawable.ic_baseline_person_24))
         }
         rowsAdapter.add(ListRow(setting_header, itemListRowSettingAdapter))
         adapter = rowsAdapter

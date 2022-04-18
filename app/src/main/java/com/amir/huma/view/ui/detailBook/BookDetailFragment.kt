@@ -1,5 +1,6 @@
 package com.amir.huma.view.ui.detailBook
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.drawable.Drawable
 import android.os.Bundle
@@ -13,6 +14,8 @@ import com.amir.huma.model.BookData
 import com.amir.huma.model.local.Book
 import com.amir.huma.presenter.detail.BookDetailDescriptionPresenter
 import com.amir.huma.presenter.main.BookViewPresenter
+import com.amir.huma.view.ui.buyBook.BuyBookActivity
+import com.amir.huma.view.ui.buyBook.BuyBookDialogFragment
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
@@ -36,14 +39,15 @@ class BookDetailFragment : DetailsSupportFragment() {
 //        DetailsOverviewRowPresenter(BookDetailDescriptionPresenter())
 
     lateinit var detailOverviewRow: DetailsOverviewRow
+    lateinit var book: Book
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val item = activity?.intent?.getParcelableExtra<Parcelable>(EXTRA_BOOK) as Book
-        Log.d(TAG, "onActivityCreated: ${item.title}")
+        book = activity?.intent?.getParcelableExtra<Parcelable>(EXTRA_BOOK) as Book
+        Log.d(TAG, "onActivityCreated: ${book.title}")
 
-        detailOverviewRow = DetailsOverviewRow(item)
-        setBookThumbnail(item)
+        detailOverviewRow = DetailsOverviewRow(book)
+        setBookThumbnail(book)
         setBookDetailActions()
         setBookDetailAdapter()
 
@@ -84,6 +88,17 @@ class BookDetailFragment : DetailsSupportFragment() {
                     R.drawable.ic_baseline_edit_24
                 )
             })
+
+            setOnItemViewClickedListener { itemViewHolder, item, rowViewHolder, row ->
+                if (item is Action) {
+                    if (item.id == 2L) {
+                        var intent = Intent(activity, BuyBookActivity::class.java).apply {
+                            putExtra(BuyBookDialogFragment.EXTRA_BOOK, book)
+                        }
+                        startActivity(intent)
+                    }
+                }
+            }
         }
 
         detailOverviewRow.actionsAdapter = actionAdapter

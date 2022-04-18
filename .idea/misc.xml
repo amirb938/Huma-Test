@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/drawable/default_background.xml" value="0.25435897435897437" />
+        <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.21296296296296297" />
+        <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.16666666666666666" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.22685185185185186" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/drawable/view_back.xml" value="0.21574074074074073" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/activity_book_detail.xml" value="0.2421875" />
@@ -12,6 +14,7 @@
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/custom_header_layout.xml" value="0.1793478260869565" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/fragment_book_detail.xml" value="0.2421875" />
+        <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/fragment_buy_book_dialog.xml" value="0.2421875" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/header_item.xml" value="0.2" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/item_setting_custom.xml" value="0.2" />
         <entry key="..\:/Android/DATA_PROJECT/Doremoon/TestTV/app/src/main/res/layout/layout_browse_title.xml" value="0.2421875" />
